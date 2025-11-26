@@ -68,61 +68,105 @@ if (isset($_POST['hapus'])) {
 
 ?>
 
-<div class="container mt-5">
-    <h1>Data Akun</h1>
-    <hr>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"><i class="fas fa-user-cog"></i> Daftar Akun</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active"><?= $title; ?></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <?php if ($_SESSION['level'] == 1) : ?>
-    <button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal"
-    data-bs-target="#modalTambah">Tambah</button>
-    <?php endif; ?>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tabel Data Akun</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <?php if ($_SESSION['level'] == 1) : ?>
+                <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal" data-target="#modalTambah">
+                  <i class="fas fa-plus"></i> Tambah
+                </button>
+                <?php endif; ?>
 
-    <table id="example" class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $no = 1; ?>
-            <?php if ($_SESSION['level'] == 1) : ?>
-            <?php foreach ($data_akun as $akun) : ?>
-            <tr>
-                <td><?= $no++; ?></td>
-                <td><?= $akun['nama']; ?></td>
-                <td><?= $akun['username']; ?></td>
-                <td><?= $akun['email']; ?></td>
-                <td>Password Ter-enkripsi</td>
-                <td class="text-center" width="20%">
-                    <button type="button" class="btn btn-success mb-1" data-bs-toggle="modal" data-bs-target="#modalUbah<?= $akun['id_akun']; ?>">Ubah</button>
-                    <button type="button" class="btn btn-danger mb-1" data-bs-toggle="modal" data-bs-target="#modalHapus<?= $akun['id_akun']; ?>">Hapus</button>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-            <?php else : ?>
-              <!-- tampil data berdasarkan user login -->
-               <?php foreach ($data_bylogin as $akun) : ?>
-            <tr>
-                <td><?= $no++; ?></td>
-                <td><?= $akun['nama']; ?></td>
-                <td><?= $akun['username']; ?></td>
-                <td><?= $akun['email']; ?></td>
-                <td>Password Ter-enkripsi</td>
-                <td class="text-center" width="20%">
-                    <button type="button" class="btn btn-success mb-1" data-bs-toggle="modal" data-bs-target="#modalUbah<?= $akun['id_akun']; ?>">Ubah</button>
-                    
-                </td>
-            </tr>
-            <?php endforeach; ?>
-            <?php endif; ?>
-        </tbody>
-    </table>
+                <div class="table-responsive">
+                  <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Nama</th>
+                              <th>Username</th>
+                              <th>Email</th>
+                              <th>Password</th>
+                              <th style="min-width: 180px;">Aksi</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php $no = 1; ?>
+                          <?php if ($_SESSION['level'] == 1) : ?>
+                          <?php foreach ($data_akun as $akun) : ?>
+                          <tr>
+                              <td><?= $no++; ?></td>
+                              <td><?= $akun['nama']; ?></td>
+                              <td><?= $akun['username']; ?></td>
+                              <td><?= $akun['email']; ?></td>
+                              <td>Password Ter-enkripsi</td>
+                              <td class="text-center" style="white-space: nowrap;">
+                                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalUbah<?= $akun['id_akun']; ?>">
+                                    <i class="fas fa-edit"></i> Ubah
+                                  </button>
+                                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalHapus<?= $akun['id_akun']; ?>">
+                                    <i class="fas fa-trash-alt"></i> Hapus
+                                  </button>
+                              </td>
+                          </tr>
+                          <?php endforeach; ?>
+                          <?php else : ?>
+                            <!-- tampil data berdasarkan user login -->
+                            <?php foreach ($data_bylogin as $akun) : ?>
+                          <tr>
+                              <td><?= $no++; ?></td>
+                              <td><?= $akun['nama']; ?></td>
+                              <td><?= $akun['username']; ?></td>
+                              <td><?= $akun['email']; ?></td>
+                              <td>Password Ter-enkripsi</td>
+                              <td class="text-center" style="white-space: nowrap;">
+                                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalUbah<?= $akun['id_akun']; ?>">
+                                    <i class="fas fa-edit"></i> Ubah
+                                  </button>
+                              </td>
+                          </tr>
+                          <?php endforeach; ?>
+                          <?php endif; ?>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
 </div>
+<!-- /.content-wrapper -->
+ 
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="modalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,7 +174,9 @@ if (isset($_POST['hapus'])) {
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
         <h5 class="modal-title" id="exampleModalLabel">Tambah Akun</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <form action="" method="post">
@@ -165,7 +211,7 @@ if (isset($_POST['hapus'])) {
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
         <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
       </div>
       </form>
@@ -180,7 +226,9 @@ if (isset($_POST['hapus'])) {
     <div class="modal-content">
       <div class="modal-header bg-success text-white">
         <h5 class="modal-title" id="exampleModalLabel">Ubah Akun</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <form action="" method="post">
@@ -221,7 +269,7 @@ if (isset($_POST['hapus'])) {
             <?php endif; ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
         <button type="submit" name="ubah" class="btn btn-success">Ubah</button>
       </div>
       </form>
@@ -237,7 +285,9 @@ if (isset($_POST['hapus'])) {
     <div class="modal-content">
       <div class="modal-header bg-danger text-white">
         <h5 class="modal-title" id="exampleModalLabel">Hapus Akun</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <form action="" method="post">
@@ -245,7 +295,7 @@ if (isset($_POST['hapus'])) {
           <p>Yakin Ingin Menghapus Data Akun : <strong><?= $akun['nama']; ?></strong> ?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
         <button type="submit" name="hapus" class="btn btn-danger">Hapus</button>
       </div>
       </form>

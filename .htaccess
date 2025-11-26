@@ -18,7 +18,7 @@ Allow from all
 </IfModule>
 
 # redirect/mengalihkan ke url lain
-redirect /crud-php/mahasiswa.php https://mubateknologi.blogspot.com/
+
 
 # kompress gzip
 <IfModule mod_deflate.c>

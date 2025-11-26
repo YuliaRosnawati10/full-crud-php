@@ -51,133 +51,6 @@ include 'config/app.php';
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="assets-template/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="assets-template/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="assets-template/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -187,7 +60,7 @@ include 'config/app.php';
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
       <img src="assets-template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">CRUD PHP <B>MUBATEKNO</B></span>
     </a>
 
     <!-- Sidebar -->
@@ -221,32 +94,94 @@ include 'config/app.php';
                with font-awesome or any other icon font library -->
             <li class="nav-header">Daftar Menu</li>
             <li class="nav-item">
-              <a href="crud-modal.php" class="nav-link">
-                <i class="nav-icon fas fa-box"></i>
+              <a href="index.php" class="nav-link">
+                <i class="nav-icon fa fa-list"></i>
                 <p>Data Barang</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="mahasiswa.php" class="nav-link">
-                <i class="nav-icon fas fa-user-graduate"></i>
-                <p>Data Mahasiswa</p>
+                <i class="nav-icon fas fa-users"></i>
+                <p>Data Mahasiswa </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="akun.php" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
+              <a href="pegawai.php" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>Data Pegawai (Realtime)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="email.php" class="nav-link">
+                <i class="nav-icon fas fa-envelope"></i>
+                <p>Kirim Email (PHPMailer)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="crud-modal.php" class="nav-link">
+                <i class="nav-icon fas fa-user-cog"></i>
                 <p>Data Akun</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="logout.php" class="nav-link">
-                <i class="nav-icon fas fa-sign-out-alt"></i>
-                <p>Logout</p>
-              </a>
-            </li>
+  <a href="logout.php" class="nav-link" onclick="return confirm('Yakin ingin keluar?');">
+    <i class="nav-icon fas fa-sign-out-alt"></i>
+    <p>Keluar</p>
+  </a>
+</li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <!-- Tambahkan konten halaman Anda di sini -->
+  
+</div>
+<!-- ./wrapper -->
+
+<!-- SEMUA SCRIPT DIPINDAHKAN KE SINI (SEBELUM PENUTUP </body>) -->
+
+<!-- jQuery -->
+<script src="assets-template/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="assets-template/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="assets-template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="assets-template/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="assets-template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets-template/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="assets-template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="assets-template/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="assets-template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<!-- ChartJS -->
+<script src="assets-template/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="assets-template/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="assets-template/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="assets-template/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="assets-template/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="assets-template/plugins/moment/moment.min.js"></script>
+<script src="assets-template/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="assets-template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="assets-template/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="assets-template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="assets-template/dist/js/adminlte.js"></script>
+
+</body>
+</html>

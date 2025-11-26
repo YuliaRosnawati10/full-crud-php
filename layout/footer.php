@@ -2,7 +2,7 @@
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+      <b><a href="https://github.com/yourusername" target="_blank">Full CRUD PHP MySQL Muba Teknologi</a></b>
     </div>
   </footer>
 
@@ -45,10 +45,9 @@
 <!-- AdminLTE App -->
 <script src="assets-template/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="assets-template/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="assets-template/dist/js/pages/dashboard.js"></script>
-
 
 <!-- DataTables  & Plugins -->
 <script src="assets-template/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -64,10 +63,45 @@
 <script src="assets-template/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets-template/dist/js/demo.js"></script>
-<!-- Page specific script -->
+
+<!-- load ckeditor cdn -->
+<script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace('alamat', {
+        filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
+        filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        height: '400px'
+    });
+</script>
+
 <script>
   $(function () {
     $('#example2').DataTable();
+  });
+</script>
+
+<!--datatable serverside -->
+<script>
+  $(document).ready(function() {
+    $('#serverside').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: {
+      "url":"mahasiswa-serverside.php?action=table_data",
+      "dataType": "json",
+      "type": "POST"
+      },
+      columns: [
+        {"data": "no"},
+        {"data": "nama"},
+        {"data": "prodi"},
+        {"data": "jk"},
+        {"data": "telepon"},
+        {"data": "aksi"},
+      ]
+    });
   });
 </script>
 
