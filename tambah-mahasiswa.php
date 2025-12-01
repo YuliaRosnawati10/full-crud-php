@@ -125,7 +125,7 @@ if (isset($_POST['tambah'])) {
                   </div>
 
                   <div class="form-group">
-                    <label for="foto"><i class="fas fa-camera"></i> Foto Mahasiswa</label>
+                    <label for="foto"><i class="fas fa-camera"></i> Foto</label>
                     <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="previewImg()">
                     <small class="form-text text-muted">Format: JPG, PNG, JPEG (Max: 2MB)</small>
                     

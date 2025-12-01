@@ -78,7 +78,24 @@
 
 <script>
   $(function () {
-    $('#example2').DataTable();
+    // Konfigurasi DataTable dengan pagination simple_numbers
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "pageLength": 2, // 2 data per halaman, supaya pagination terlihat
+      "pagingType": "simple_numbers", // Tampilan: « 1 2 3 »
+      "language": {
+        "paginate": {
+          "previous": "&laquo;",
+          "next": "&raquo;"
+        }
+      }
+    });
   });
 </script>
 

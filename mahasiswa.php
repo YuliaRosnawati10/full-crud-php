@@ -133,10 +133,10 @@ foreach ($data_mahasiswa as $mhs) {
                   <a href="tambah-mahasiswa.php" class="btn btn-primary btn-sm">
                       <i class="fas fa-plus-circle"></i> Tambah
                   </a>
-                  <a href="download-excel-mahasiswa.php" class="btn btn-success btn-sm">
+                  <a href="dowload-excel-mahasiswa.php" class="btn btn-success btn-sm">
                       <i class="fas fa-file-excel"></i> Download Excel
                   </a>
-                  <a href="download-pdf-mahasiswa.php" class="btn btn-danger btn-sm" target="_blank">
+                  <a href="dowload-pdf-mahasiswa.php" class="btn btn-danger btn-sm" target="_blank">
                       <i class="fas fa-file-pdf"></i> Download PDF
                   </a>
                 </div>

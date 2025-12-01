@@ -21,6 +21,21 @@ $data_akun = select("SELECT * FROM akun");
 $id_akun = $_SESSION['id_akun'];
 $data_bylogin = select("SELECT * FROM akun WHERE id_akun = $id_akun");
 
+// Hitung statistik untuk grafik
+$jumlah_admin = count(array_filter($data_akun, function($akun) {
+    return $akun['level'] == 1;
+}));
+
+$jumlah_operator_barang = count(array_filter($data_akun, function($akun) {
+    return $akun['level'] == 2;
+}));
+
+$jumlah_operator_mahasiswa = count(array_filter($data_akun, function($akun) {
+    return $akun['level'] == 3;
+}));
+
+$total_akun = count($data_akun);
+
 // jika tombol tambah ditekan jalankan script berikut
 if (isset($_POST['tambah'])) {
   if (create_akun($_POST) > 0) {
@@ -89,6 +104,40 @@ if (isset($_POST['hapus'])) {
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        
+        <!-- Grafik -->
+        <?php if ($_SESSION['level'] == 1) : ?>
+        <div class="row mb-3">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Distribusi Akun Berdasarkan Level
+                </h3>
+              </div>
+              <div class="card-body">
+                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-line mr-1"></i>
+                  Jumlah Akun Per Level
+                </h3>
+              </div>
+              <div class="card-body">
+                <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -166,7 +215,81 @@ if (isset($_POST['hapus'])) {
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
- 
+
+<!-- Chart.js Script -->
+<?php if ($_SESSION['level'] == 1) : ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Pie Chart
+    var pieChartCanvas = document.getElementById('pieChart');
+    if (pieChartCanvas) {
+        var pieChart = new Chart(pieChartCanvas, {
+            type: 'pie',
+            data: {
+                labels: ['Admin', 'Operator Barang', 'Operator Mahasiswa'],
+                datasets: [{
+                    data: [<?= $jumlah_admin; ?>, <?= $jumlah_operator_barang; ?>, <?= $jumlah_operator_mahasiswa; ?>],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+    }
+
+    // Line Chart
+    var lineChartCanvas = document.getElementById('lineChart');
+    if (lineChartCanvas) {
+        var lineChart = new Chart(lineChartCanvas, {
+            type: 'line',
+            data: {
+                labels: ['Admin', 'Operator Barang', 'Operator Mahasiswa'],
+                datasets: [{
+                    label: 'Jumlah Akun',
+                    data: [<?= $jumlah_admin; ?>, <?= $jumlah_operator_barang; ?>, <?= $jumlah_operator_mahasiswa; ?>],
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+<?php endif; ?>
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="modalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
